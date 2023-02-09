@@ -15,6 +15,8 @@ export const Container = styled.div`
     padding: 0 10px;
     user-select: none;
 
+    position: relative;
+
     @media (max-width: 428px) {
         border-radius: 0;
     }
@@ -52,8 +54,17 @@ export const ContentAvatarName = styled.div`
 `;
 export const ContentBellIcon = styled.div`
    position: relative;
+    height: 72px;
 
-   div {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 428px) {
+        display: none;
+    }
+   
+`;
+export const PseudoElement = styled.div`
 
         ::after {
             content: '';
@@ -63,16 +74,16 @@ export const ContentBellIcon = styled.div`
             background: var(--color-notify);
 
             position: absolute;
-            top: 3px;
+            top: 20px;
             right: 0;
         }
-   }
 `;
 export const ContentAvatar = styled.div`
    display: flex;
    align-items: center;
    cursor: pointer;
 `;
+
 export const Avatar = styled.img`
    width: 60px;
    border-radius: 50%;
@@ -90,4 +101,16 @@ export const BarsIcon = styled(HiBars3BottomLeft)`
     color: var(--color-text);
     font-size: 2.2em;
     cursor: pointer;
+`;
+
+export const DropD = styled.div<{showDropdown: boolean}>`
+    height: ${props => props.showDropdown ? '200px' : '0'};
+    width: 260px;
+    background: green;
+    overflow: hidden;
+    transition: all .5s ease;
+    position: absolute;
+    top: 70px;    
+
+  
 `;

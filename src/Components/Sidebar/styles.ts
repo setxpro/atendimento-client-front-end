@@ -1,6 +1,16 @@
 import styled from 'styled-components';
 import { HiBars3BottomRight } from 'react-icons/hi2'
-import { AiOutlinePoweroff } from 'react-icons/ai'
+import { 
+    AiOutlinePoweroff, 
+    AiOutlineBarChart,
+    AiOutlineMessage
+} from 'react-icons/ai'
+import { 
+    MdOutlineAttachMoney, 
+    MdOutlineDesignServices,
+    MdOutlineContactSupport,
+
+} from 'react-icons/md'
 
 export const Container = styled.div<{ openSidebar: boolean }>`
     position: fixed;
@@ -53,8 +63,44 @@ export const ContentBlur = styled.div<{ openSidebar: boolean }>`
     display: ${props => props.openSidebar ? 'inline' : 'none'};
 `;
 
-export const SidebarMenu = styled.div`
+export const SidebarMenu = styled.div<{  openSidebar: boolean;}>`
     height: calc(100vh - (70px + 80px));
+    padding: 15px 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .active {
+            background: rgba(100, 100, 100, 0.5)
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        
+        
+        padding: 0.5rem;
+        border-radius: 8px;
+        white-space: nowrap;
+        text-decoration: none;
+
+        h4 {
+            color: #fff;
+            font-weight: 500;
+            opacity: ${props => props.openSidebar ? '1' : '0'};
+        }
+
+        transition: all .8s ease;
+
+        
+
+        &:hover {
+            background: rgba(100, 100, 100, 0.5);
+        }
+    }
 `;
 
 export const SidebarBottom = styled.div`
@@ -63,4 +109,28 @@ export const SidebarBottom = styled.div`
     align-items: center;
     justify-content: center;
     border-top: 1px solid #5555;
+`;
+
+export const DashboardIcon = styled(AiOutlineBarChart)<{ openSidebar: boolean }>`
+    color: #fff;
+    font-size: 1.5em;
+    transition: .5s all ease;
+
+    opacity: ${props => props.openSidebar ? '1' : '0'};
+`;
+export const MessageIcon = styled(AiOutlineMessage)<{ openSidebar: boolean }>`
+    color: #fff;
+    font-size: 1.5em;
+`;
+export const ExpenseIcon = styled(MdOutlineAttachMoney)<{ openSidebar: boolean }>`
+    color: #fff;
+    font-size: 1.5em;
+`;
+export const OrderServiceIcon = styled(MdOutlineDesignServices)<{ openSidebar: boolean }>`
+    color: #fff;
+    font-size: 1.5em;
+`;
+export const SupportIcon = styled(MdOutlineContactSupport)<{ openSidebar: boolean }>`
+    color: #fff;
+    font-size: 1.5em;
 `;

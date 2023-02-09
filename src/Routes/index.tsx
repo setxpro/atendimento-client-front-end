@@ -11,6 +11,10 @@ import UpdatePassword from '../Pages/UpdatePassword';
 const RoutesApp = () => {
   return (
     <Routes>
+      <Route path="/login" element={<Login/>}/>
+        <Route path="/forget-pass" element={<ForgetPass/>}/>
+        <Route path="/update-pass/:id" element={<UpdatePassword/>}/>
+
         <Route path="/" element={
           <Security>
             <Layout>
@@ -18,9 +22,42 @@ const RoutesApp = () => {
             </Layout>
           </Security>
         }/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/forget-pass" element={<ForgetPass/>}/>
-        <Route path="/update-pass/:id" element={<UpdatePassword/>}/>
+        <Route path="/dashboard" element={
+          <Security>
+            <Layout>
+              <Home/>
+            </Layout>
+          </Security>
+        }/>
+        <Route path="/expense" element={
+          <Security>
+            <Layout>
+              <Home/>
+            </Layout>
+          </Security>
+        }/>
+        <Route path="/order-service" element={
+          <Security>
+            <Layout>
+              <Home/>
+            </Layout>
+          </Security>
+        }/>
+        <Route path="/messages" element={
+          <Security>
+            <Layout>
+              <Home/>
+            </Layout>
+          </Security>
+        }/>
+        <Route path="/supports" element={
+          <Security>
+            <Layout>
+              <Home/>
+            </Layout>
+          </Security>
+        }/>
+        
     </Routes>
   );
 }

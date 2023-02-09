@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../Contexts/Auth';
 import { useSidebar } from '../../Contexts/SidebarContext';
 import * as C from './styles';
@@ -7,15 +7,22 @@ const Header = () => {
     const { wrapperSidebar, wrapperSidebarSettings } = useSidebar();
     const { user } = useContext(AuthContext);
 
+    const [showDropdown, setShowDropDown] = useState(false)
+
+    console.log(showDropdown)
+
   return (
     <C.Container>
        <C.LeftSide>
             <C.BarsIcon onClick={wrapperSidebar}/>
        </C.LeftSide>
-       <C.RightSide>
-            <C.ContentBellIcon>
-                <div><C.BellIcon/></div>
+       <C.RightSide  onMouseLeave={() => setShowDropDown(false)}>
+            <C.ContentBellIcon onMouseOver={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
+                <C.PseudoElement >
+                    <C.BellIcon/>
+                </C.PseudoElement>
             </C.ContentBellIcon>
+                    <C.DropD onMouseOver={() => setShowDropDown(true)} showDropdown={showDropdown}>scsc</C.DropD>
             <C.ContentNameAvatar>
                 <C.ContentAvatarName>
                     <h4>{user?.name} {user?.middlename}</h4>
