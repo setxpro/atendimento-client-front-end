@@ -12,12 +12,12 @@ import {
 
 } from 'react-icons/md'
 
-export const Container = styled.div<{ openSidebar: boolean }>`
+export const Container = styled.div<{ isOpenSidebar: boolean }>`
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
-    width: ${props => props.openSidebar ? '245px' : '0px'};
+    width: ${props => props.isOpenSidebar ? '245px' : '0px'};
     overflow: hidden;
     background: var(--color-sidebar);
 
@@ -51,7 +51,7 @@ export const LogoutIcon = styled(AiOutlinePoweroff)`
     cursor: pointer;
 `;
 
-export const ContentBlur = styled.div<{ openSidebar: boolean }>`
+export const ContentBlur = styled.div<{ isOpenSidebar: boolean }>`
     position: absolute;
     left: 0;
     top: 0;
@@ -60,10 +60,10 @@ export const ContentBlur = styled.div<{ openSidebar: boolean }>`
     background: rgba(0, 0, 0, 0.5);
     z-index: 99;
 
-    display: ${props => props.openSidebar ? 'inline' : 'none'};
+    display: ${props => props.isOpenSidebar ? 'inline' : 'none'};
 `;
 
-export const SidebarMenu = styled.div<{  openSidebar: boolean;}>`
+export const SidebarMenu = styled.div<{  isOpenSidebar: boolean;}>`
     height: calc(100vh - (70px + 80px));
     padding: 15px 10px;
 
@@ -90,7 +90,7 @@ export const SidebarMenu = styled.div<{  openSidebar: boolean;}>`
         h4 {
             color: #fff;
             font-weight: 500;
-            opacity: ${props => props.openSidebar ? '1' : '0'};
+            opacity: ${props => props.isOpenSidebar ? '1' : '0'};
         }
 
         transition: all .8s ease;
@@ -111,26 +111,26 @@ export const SidebarBottom = styled.div`
     border-top: 1px solid #5555;
 `;
 
-export const DashboardIcon = styled(AiOutlineBarChart)<{ openSidebar: boolean }>`
+export const DashboardIcon = styled(AiOutlineBarChart)<{ isOpenSidebar: boolean }>`
     color: #fff;
     font-size: 1.5em;
     transition: .5s all ease;
 
-    opacity: ${props => props.openSidebar ? '1' : '0'};
+    opacity: ${props => props.isOpenSidebar ? '1' : '0'};
 `;
-export const MessageIcon = styled(AiOutlineMessage)<{ openSidebar: boolean }>`
+export const MessageIcon = styled(AiOutlineMessage)<{ isOpenSidebar: boolean }>`
     color: #fff;
     font-size: 1.5em;
 `;
-export const ExpenseIcon = styled(MdOutlineAttachMoney)<{ openSidebar: boolean }>`
+export const ExpenseIcon = styled(MdOutlineAttachMoney)<{ isOpenSidebar: boolean }>`
     color: #fff;
     font-size: 1.5em;
 `;
-export const OrderServiceIcon = styled(MdOutlineDesignServices)<{ openSidebar: boolean }>`
+export const OrderServiceIcon = styled(MdOutlineDesignServices)<{ isOpenSidebar: boolean }>`
     color: #fff;
     font-size: 1.5em;
 `;
-export const SupportIcon = styled(MdOutlineContactSupport)<{ openSidebar: boolean }>`
+export const SupportIcon = styled(MdOutlineContactSupport)<{ isOpenSidebar: boolean }>`
     color: #fff;
     font-size: 1.5em;
 `;

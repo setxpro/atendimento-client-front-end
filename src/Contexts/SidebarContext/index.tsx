@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState, useContext } from "react";
 
 interface Props {
-    openSidebar: boolean;
+    showSidebar: boolean;
     openSidebarSettings: boolean;
     wrapperSidebar: () => void;
     wrapperSidebarSettings: () => void;
@@ -11,15 +11,15 @@ export const SidebarContext = createContext({} as Props)
 
 export const SidebarProvider = ( { children } : { children: ReactNode }) => { 
 
-    const [openSidebar, setOpenSidebar] = useState(false);
+    const [showSidebar, setShowSidebar] = useState(false);
     const [openSidebarSettings, setOpenSidebarSettings] = useState(false);
 
-    const wrapperSidebar = () => setOpenSidebar(!openSidebar);
+    const wrapperSidebar = () => setShowSidebar(!showSidebar);
     const wrapperSidebarSettings = () => setOpenSidebarSettings(!openSidebarSettings);
 
     return (
         <SidebarContext.Provider value={{
-            openSidebar,
+            showSidebar,
             wrapperSidebar,
             openSidebarSettings,
             wrapperSidebarSettings

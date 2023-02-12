@@ -5,6 +5,7 @@ import { Security } from '../Components/Security';
 import Login from '../Pages/Login';
 import ForgetPass from '../Pages/ForgetPass';
 import UpdatePassword from '../Pages/UpdatePassword';
+import Expense from '../Pages/Expense';
 
 
 
@@ -32,7 +33,7 @@ const RoutesApp = () => {
         <Route path="/expense" element={
           <Security>
             <Layout>
-              <Home/>
+              <Expense/>
             </Layout>
           </Security>
         }/>

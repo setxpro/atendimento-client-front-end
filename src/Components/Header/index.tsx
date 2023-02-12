@@ -9,8 +9,6 @@ const Header = () => {
 
     const [showDropdown, setShowDropDown] = useState(false)
 
-    console.log(showDropdown)
-
   return (
     <C.Container>
        <C.LeftSide>
