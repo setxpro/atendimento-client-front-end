@@ -4,7 +4,6 @@ import { Task } from '../../Types/Task';
 import * as C from './styles';
 import AddTask  from '../../Components/Tasks/AddTask'
 import { AuthContext } from '../../Contexts/Auth';
-import { format } from 'date-fns';
 import axios from 'axios';
 import ListTasks from '../../Components/Tasks/ListTasks';
 
@@ -12,7 +11,6 @@ const Tasks = () => {
 
     const { user } = useContext(AuthContext)
     const [list, setList] = useState<Task[]>([]);
-    const [load, setLoad] = useState(false);
 
     const handleAdd = async (taskName: string) => {
         const timeElapsed = Date.now();
@@ -28,7 +26,7 @@ const Tasks = () => {
     }
 
     useEffect(() => {
-            setInterval(() => {
+            setTimeout(() => {
                 (async () => {
                     const { data } = await axios.get(`http://localhost:3333/api/find-all-tasks/${user?._id}`)
                     return setList(data);

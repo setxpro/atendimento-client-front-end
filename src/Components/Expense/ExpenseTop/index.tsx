@@ -36,18 +36,18 @@ const ExpenseTop: React.FC<Props> = ({ currentMonth, onMonthChange, inCome, expe
     <ResumeItem
         title="Receitas" 
         value={inCome}
-        color={'blue'}
+        color={'rgb(3, 255, 179)'}
     />
     <ResumeItem
         title="Despesas" 
         value={expense}
-        color={'red'}
+        color={'rgb(255,100,100)'}
         isExpense={true}
     />
     <ResumeItem
         title="Balanço"
         value={inCome - expense}
-        color={(inCome - expense) < 0 ? 'red' : 'green'}
+        color={(inCome - expense) < 0 ? 'rgb(255,100,100)' : 'rgb(100,255,100 )'}
     />
   </C.InfoArea>
   );

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BsTrash } from 'react-icons/bs'
 
 type ContainerProps = {
     done: boolean;
@@ -14,10 +15,18 @@ export const Container = styled.div<ContainerProps>(({ done })=>(
     margin-bottom: 10px;
     align-items: center;
     margin-top: 1rem;
+    
+
+    transition: .5s;
+
+    &:hover {
+        background-color: #5555;
+    }
     input {
         width: 18px;
         height: 18px;
         margin-right: 5px;
+        cursor: pointer;
     }
     label {
         color: #eee;
@@ -37,6 +46,12 @@ export const ContentTask = styled.div`
     
    
 `;
+export const TrashIcon = styled(BsTrash)`
+    font-size: 1.6em;
+    color: var(--color-text);
+    cursor: pointer;
+`;
+
 export const ContentArea = styled.div`
     display: flex;
     gap: 3px;

@@ -23,6 +23,17 @@ export const ContainerTop = styled.div`
 `;
 export const ContentTasksArea = styled.div`
     height: 450px;
+    overflow-y: scroll;
+    padding: 0 10px;
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #6666;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: salmon;
+    }
     .contain {
         height: inherit !important;
         display: flex;

@@ -17,7 +17,7 @@ const AddTask = ({onEnter}: Props) => {
     }
   return (
     <C.Container>
-    <div className="image">✛</div>
+    <div className="image"><C.SymbolIcon/></div>
         <input 
             type="text" 
             name=""

@@ -18,6 +18,13 @@ const ListTasks = ( { item } : Props) => {
       return data;
     }
 
+    const handleCompleteTask = async (id: string) => {
+      const { data } = await axios.patch(`http://localhost:3333/api/update-tasks/${id}`, {
+        isCompleted: true,
+      });
+      return data;
+    }
+
   return (
     <C.Container done={isChecked}>
 
@@ -27,6 +34,7 @@ const ListTasks = ( { item } : Props) => {
                 type="checkbox" 
                 checked={isChecked}
                 onChange={e => setIsChecked(e.target.checked)}
+                onClick={() => handleCompleteTask(item._id)}
             />
           </C.InputArea>
           <C.ContentTask>
@@ -35,7 +43,7 @@ const ListTasks = ( { item } : Props) => {
         </C.ContentArea>
 
         <C.TrashArea>
-          <button onClick={() => handleDeleteTask(item._id)}>del</button>
+          <C.TrashIcon onClick={() => handleDeleteTask(item._id)}/>
               <span className='date'>{`${format(new Date(item.date), 'dd/MM')}`}</span>
         </C.TrashArea>
     </C.Container>      

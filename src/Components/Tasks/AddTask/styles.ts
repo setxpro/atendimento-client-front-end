@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { RiGradienterLine } from 'react-icons/ri'
+
 export const Container = styled.div`
     border: 1px solid #555;
     border-radius: 15px;
@@ -9,7 +11,6 @@ export const Container = styled.div`
     align-items: center;
     .image {
         margin-right: 5px;
-        font-size: 1rem;
     }
     input {
         width: 100%;
@@ -20,4 +21,9 @@ export const Container = styled.div`
         font-size: 1rem;
         flex: 1;
     }
+`;
+
+export const SymbolIcon = styled(RiGradienterLine)`
+    color: var(--color-text);
+    font-size: 1rem;
 `;
