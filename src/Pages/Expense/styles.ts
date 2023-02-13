@@ -82,6 +82,19 @@ export const TableArea = styled.div`
         background: #666;
     }
 
+    .contain {
+        height: inherit !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            color: var(--color-text);
+            font-size: 2.5em;
+            font-weight: 500;
+        }
+    }
+
     table {
         width: 100%;
 

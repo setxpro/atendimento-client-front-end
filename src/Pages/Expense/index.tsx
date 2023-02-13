@@ -27,17 +27,22 @@ const Expense = () => {
       }
 
       useEffect(() => {
-        (async() => {
+          (async() => {
+            const { data } = await axios.get(`http://localhost:3333/api/find-all-expense/${user?._id}`)
+            return setList(data)
+           })()
+      }, [user?._id])
 
-          const { data } = await axios.get(`http://localhost:3333/api/find-all-expense/${user?._id}`)
-          return setList(data.expense)
-         })()
-      })
+      useEffect(() => {
+          setInterval(() => {
+            (async() => {
+              const { data } = await axios.get(`http://localhost:3333/api/find-all-expense/${user?._id}`)
+              return setList(data)
+             })()
+          }, 100)
+            
+      }, [])
 
-
-      // useEffect(() => {
-      //   setFilteredList(filterListByMonth(list, currentMonth));
-      // },[list, currentMonth]);
     
       useEffect(() => {
         let incomeCount = 0;
@@ -73,6 +78,7 @@ const Expense = () => {
           <C.Content>
                <InputArea/>
                 <C.TableArea>
+                {list.length === 0 ? <div className='contain'><h1>Adicione uma despesa!</h1></div> :  
                     <table>
                         <thead>
                             <tr>
@@ -89,6 +95,7 @@ const Expense = () => {
                         ))}
                         </tbody>
                     </table>
+                }
                 </C.TableArea>
           </C.Content>
       </C.Container>

@@ -6,6 +6,7 @@ import Login from '../Pages/Login';
 import ForgetPass from '../Pages/ForgetPass';
 import UpdatePassword from '../Pages/UpdatePassword';
 import Expense from '../Pages/Expense';
+import Tasks from '../Pages/Tasks';
 
 
 
@@ -37,10 +38,10 @@ const RoutesApp = () => {
             </Layout>
           </Security>
         }/>
-        <Route path="/order-service" element={
+        <Route path="/tasks" element={
           <Security>
             <Layout>
-              <Home/>
+              <Tasks/>
             </Layout>
           </Security>
         }/>

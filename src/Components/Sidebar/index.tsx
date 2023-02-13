@@ -95,7 +95,7 @@ const Sidebar = () => {
           <C.SidebarMenu isOpenSidebar={showSidebar}>
             <Link to="/dashboard"  onClick={toggleSelect1} className={option1 ? 'active' : ''}><C.DashboardIcon isOpenSidebar={showSidebar}/><h4>Dashboards</h4></Link>
             <Link to="/expense" onClick={toggleSelect2} className={option2 ? 'active' : ''}><C.ExpenseIcon isOpenSidebar={showSidebar}/><h4>Expense</h4></Link>
-            <Link to="/order-service" onClick={toggleSelect3} className={option3 ? 'active' : ''}><C.OrderServiceIcon isOpenSidebar={showSidebar}/><h4>Order Service</h4></Link>
+            <Link to="/tasks" onClick={toggleSelect3} className={option3 ? 'active' : ''}><C.OrderServiceIcon isOpenSidebar={showSidebar}/><h4>Tasks</h4></Link>
             <Link to="/messages" onClick={toggleSelect4} className={option4 ? 'active' : ''}><C.MessageIcon isOpenSidebar={showSidebar}/><h4>Message</h4></Link>
             <Link to="/supports" onClick={toggleSelect5} className={option5 ? 'active' : ''}><C.SupportIcon isOpenSidebar={showSidebar}/><h4>Support</h4></Link>
           </C.SidebarMenu>

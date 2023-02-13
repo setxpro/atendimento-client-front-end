@@ -8,7 +8,7 @@ type Props = {
   item: Item;
 }
 
-const TableItem: React.FC<Props> = ({item}) => {
+const TableItem: React.FC<Props> = ({ item }) => {
 
   const handleDeleteExpense = async (id: string) => {
       const { data } = await axios.delete(`http://localhost:3333/api/delete-expense/${id}`) 

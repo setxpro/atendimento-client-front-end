@@ -42,6 +42,7 @@ const ExpenseTop: React.FC<Props> = ({ currentMonth, onMonthChange, inCome, expe
         title="Despesas" 
         value={expense}
         color={'red'}
+        isExpense={true}
     />
     <ResumeItem
         title="Balanço"
